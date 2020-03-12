@@ -41,118 +41,70 @@
     <br />
     <br />
     <br />
+    <Carousel></Carousel>
     <template>
-      <v-container>
-        <v-row justify="space-around">
-          <v-col cols="6" sm="4">
-            <v-card max-width="500" class="mx-auto">
-              <v-list-item>
-                <v-list-item-avatar color="grey"></v-list-item-avatar>
-                <v-list-item-content>
-                  <v-list-item-title class="headline"
-                    >Our Changing Planet</v-list-item-title
-                  >
-                  <v-list-item-subtitle>by Kurt Wagner</v-list-item-subtitle>
-                </v-list-item-content>
-              </v-list-item>
+      <v-row>
+        <v-col cols="12" sm="10" offset-sm="1">
+          <v-card>
+            <v-container>
+              <v-row>
+                <v-col
+                  v-for="n in 9"
+                  :key="n"
+                  class="d-flex child-flex"
+                  cols="4"
+                >
+                  <v-card max-width="500" class="mx-auto">
+                    <v-list-item>
+                      <v-list-item-avatar color="grey"></v-list-item-avatar>
+                      <v-list-item-content>
+                        <v-list-item-title class="headline"
+                          >Our Changing Planet</v-list-item-title
+                        >
+                        <v-list-item-subtitle
+                          >by Kurt Wagner</v-list-item-subtitle
+                        >
+                      </v-list-item-content>
+                    </v-list-item>
 
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/cards/mountain.jpg"
-                height="194"
-              ></v-img>
+                    <v-img
+                      src="https://cdn.vuetifyjs.com/images/cards/mountain.jpg"
+                      height="194"
+                    ></v-img>
 
-              <v-card-text
-                >Visit ten places on our planet that are undergoing the biggest
-                changes today.</v-card-text
-              >
+                    <v-card-text
+                      >Visit ten places on our planet that are undergoing the
+                      biggest changes today.</v-card-text
+                    >
 
-              <v-card-actions>
-                <v-btn text color="deep-purple accent-4">Read</v-btn>
-                <v-btn text color="deep-purple accent-4">Bookmark</v-btn>
-                <v-spacer></v-spacer>
-                <v-btn icon>
-                  <v-icon>mdi-heart</v-icon>
-                </v-btn>
-                <v-btn icon>
-                  <v-icon>mdi-share-variant</v-icon>
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-
-          <v-col cols="6" sm="4">
-            <v-card max-width="500" class="mx-auto">
-              <v-list-item>
-                <v-list-item-avatar color="grey"></v-list-item-avatar>
-                <v-list-item-content>
-                  <v-list-item-title class="headline"
-                    >Our Changing Planet</v-list-item-title
-                  >
-                  <v-list-item-subtitle>by Kurt Wagner</v-list-item-subtitle>
-                </v-list-item-content>
-              </v-list-item>
-
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/cards/mountain.jpg"
-                height="194"
-              ></v-img>
-
-              <v-card-text
-                >Visit ten places on our planet that are undergoing the biggest
-                changes today.</v-card-text
-              >
-
-              <v-card-actions>
-                <v-btn text color="deep-purple accent-4">Read</v-btn>
-                <v-btn text color="deep-purple accent-4">Bookmark</v-btn>
-                <v-spacer></v-spacer>
-                <v-btn icon>
-                  <v-icon>mdi-heart</v-icon>
-                </v-btn>
-                <v-btn icon>
-                  <v-icon>mdi-share-variant</v-icon>
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-
-          <v-col cols="6" sm="4">
-            <v-card max-width="500" class="mx-auto">
-              <v-list-item>
-                <v-list-item-avatar color="grey"></v-list-item-avatar>
-                <v-list-item-content>
-                  <v-list-item-title class="headline"
-                    >Our Changing Planet</v-list-item-title
-                  >
-                  <v-list-item-subtitle>by Kurt Wagner</v-list-item-subtitle>
-                </v-list-item-content>
-              </v-list-item>
-
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/cards/mountain.jpg"
-                height="194"
-              ></v-img>
-
-              <v-card-text
-                >Visit ten places on our planet that are undergoing the biggest
-                changes today.</v-card-text
-              >
-
-              <v-card-actions>
-                <v-btn text color="deep-purple accent-4">Read</v-btn>
-                <v-btn text color="deep-purple accent-4">Bookmark</v-btn>
-                <v-spacer></v-spacer>
-                <v-btn icon>
-                  <v-icon>mdi-heart</v-icon>
-                </v-btn>
-                <v-btn icon>
-                  <v-icon>mdi-share-variant</v-icon>
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
+                    <v-card-actions>
+                      <v-btn text color="deep-purple accent-4">Read</v-btn>
+                      <v-btn text color="deep-purple accent-4">Bookmark</v-btn>
+                      <v-spacer></v-spacer>
+                      <v-btn icon>
+                        <v-icon>mdi-heart</v-icon>
+                      </v-btn>
+                      <v-btn icon>
+                        <v-icon>mdi-share-variant</v-icon>
+                      </v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-container>
+            <template>
+              <div class="text-center">
+                <v-pagination
+                  v-model="page"
+                  :length="4"
+                  prev-icon="mdi-menu-left"
+                  next-icon="mdi-menu-right"
+                ></v-pagination>
+              </div>
+            </template>
+          </v-card>
+        </v-col>
+      </v-row>
     </template>
 
     <template>
@@ -200,5 +152,16 @@
   </div>
 </template>
 <script>
-export default {}
+import Carousel from '~/components/carousel'
+
+export default {
+  components: {
+    Carousel
+  },
+  data() {
+    return {
+      page: 1
+    }
+  }
+}
 </script>
