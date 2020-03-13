@@ -43,6 +43,10 @@
     <br />
     <Carousel></Carousel>
 
+    <nuxt-link :to="'/depan/create'">
+      <button class="btn btn-md btn-primary">tambah</button>
+    </nuxt-link>
+
     <template>
       <v-row>
         <v-col cols="12" sm="10" offset-sm="1">
@@ -57,6 +61,7 @@
                     :judul="resep.judul"
                     :by="resep.by"
                     :keterangan="resep.keterangan"
+                    :resep="resep.resep"
                     :gambar="resep.gambar"
                     @muat-ulang="getData"
                   ></ListItem>

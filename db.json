@@ -1,16 +1,8 @@
 {
   "resep": [
     {
-      "id": 1,
-      "judul": "Soto Ayam lamongan homemade",
-      "by": "agus setiamus",
-      "keterangan": "masakan khas lampung",
-      "resep": "cara membuat telur dadar",
-      "gambar": "https://img-global.cpcdn.com/recipes/0e6a750973101e3b/751x532cq70/soto-ayam-lamongan-homemade-foto-resep-utama.jpg"
-    },
-    {
       "id": 2,
-      "judul": "Ayam Kecap Mentega",
+      "judul": "Ayam Upin Ipin",
       "by": "Cantika",
       "keterangan": "masakan khas ibu",
       "resep": "cara membuat telur tempe goreng",
@@ -71,6 +63,20 @@
       "keterangan": "resep dari mertua",
       "resep": "cara membuat telur mata sapi",
       "gambar": "https://img-global.cpcdn.com/recipes/8107703b086cbbe1/640x640sq70/photo.jpg"
+    },
+    {
+      "judul": "ayam",
+      "keterangan": "goyeng",
+      "by": "dini",
+      "resep": "emak",
+      "id": 10
+    },
+    {
+      "judul": "bakwan",
+      "keterangan": "enak",
+      "by": "juni",
+      "resep": "emaknya",
+      "id": 12
     }
   ]
 }

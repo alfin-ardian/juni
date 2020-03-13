@@ -3,24 +3,24 @@
     <v-row>
       <v-col cols="12" sm="10" offset-sm="1">
         <v-card class="mx-auto" max-width="344">
-          <v-img
-            src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-            height="200px"
-          ></v-img>
+          <v-img :src="resep.gambar" height="200px"></v-img>
 
           <v-card-title>
             {{ judul }}
           </v-card-title>
 
           <v-card-subtitle>
+            by :
             {{ by }}
           </v-card-subtitle>
 
           <v-card-actions>
-            <v-btn text>Share</v-btn>
+            <v-btn :to="'/depan/' + id + '/edit'" color="purple" text>
+              edit
+            </v-btn>
 
-            <v-btn color="purple" text>
-              Explore
+            <v-btn @click="hapus" color="purple" text>
+              hapus
             </v-btn>
 
             <v-spacer></v-spacer>
@@ -38,6 +38,11 @@
 
               <v-card-text>
                 {{ keterangan }}
+              </v-card-text>
+              <v-card-text>
+                Cara Membuat :
+                <br />
+                {{ resep }}
               </v-card-text>
             </div>
           </v-expand-transition>
@@ -62,8 +67,15 @@ export default {
       type: String,
       default: ''
     },
+    resep: {
+      type: String,
+      default: ''
+    },
     judul: {
       type: String,
+      default: ''
+    },
+    gambar: {
       default: ''
     },
     by: {
@@ -71,6 +83,7 @@ export default {
       default: ''
     }
   },
+
   methods: {
     hapus() {
       const hapus1 = confirm('Apakah anda yakin ingin mengahapus data?')
