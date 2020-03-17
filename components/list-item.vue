@@ -2,8 +2,8 @@
   <v-container fluid>
     <v-row>
       <v-col cols="12" sm="10" offset-sm="1">
-        <v-card class="mx-auto" max-width="344">
-          <v-img :src="resep.gambar" height="200px"></v-img>
+        <v-card class="mx-auto" max-width="500">
+          <v-img :src="gambar" height="200px"></v-img>
 
           <v-card-title>
             {{ judul }}
@@ -76,6 +76,7 @@ export default {
       default: ''
     },
     gambar: {
+      type: String,
       default: ''
     },
     by: {

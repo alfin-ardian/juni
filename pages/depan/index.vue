@@ -119,10 +119,11 @@
 </template>
 <script>
 import Axios from 'axios'
+import Carousel from '~/components/carousel'
 import ListItem from '~/components/list-item'
 
 export default {
-  components: { ListItem },
+  components: { ListItem, Carousel },
   data() {
     return {
       reseps: [],
@@ -142,7 +143,7 @@ export default {
         const res = await Axios.get('http://localhost:3001/resep')
         this.reseps = res.data
 
-        if (this.posts.length === 0) {
+        if (this.reseps.length === 0) {
           this.isEmpty = true
         }
       } catch (err) {
