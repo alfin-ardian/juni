@@ -7,7 +7,6 @@
             <v-text-field
               v-model="resep.judul"
               :rules="nameRules"
-              :counter="10"
               label="judul"
               required
             ></v-text-field>
@@ -17,7 +16,6 @@
             <v-text-field
               v-model="resep.keterangan"
               :rules="nameRules"
-              :counter="10"
               label="keterangan"
               required
             ></v-text-field>
@@ -26,21 +24,29 @@
           <v-col cols="12" md="4">
             <v-text-field
               v-model="resep.by"
-              :rules="emailRules"
+              :rules="nameRules"
               label="by"
               required
             ></v-text-field>
           </v-col>
-        </v-row>
-        <v-row>
-          <v-text-field v-model="resep.resep" label="resep"></v-text-field>
-        </v-row>
-        <v-row>
-          <v-file-input
-            multiple
-            label="tambah gambar"
-            v-model="resep.gambar"
-          ></v-file-input>
+
+          <v-col cols="12" md="4">
+            <v-text-field
+              v-model="resep.resep"
+              :rules="nameRules"
+              label="resep"
+              required
+            ></v-text-field>
+          </v-col>
+
+          <v-col cols="12" md="4">
+            <v-text-field
+              v-model="resep.gambar"
+              :rules="nameRules"
+              label="gambar"
+              required
+            ></v-text-field>
+          </v-col>
         </v-row>
         <v-btn small color="blue" @click.prevent="kirim">kirim</v-btn>
       </v-container>
@@ -58,7 +64,7 @@ export default {
   },
   methods: {
     kirim() {
-      Axios.post('http://localhost:3001/resep', this.post).then((send) => {
+      Axios.post('http://localhost:3001/resep', this.resep).then((send) => {
         this.$router.push('/depan')
       })
     }

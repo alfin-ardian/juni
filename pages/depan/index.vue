@@ -43,9 +43,14 @@
     <br />
     <Carousel></Carousel>
 
-    <nuxt-link :to="'/depan/create'">
-      <button class="btn btn-md btn-primary">tambah</button>
-    </nuxt-link>
+    <br />
+    <template>
+      <div class="text-center">
+        <v-btn class="ma-2" outlined color="indigo" :to="'/depan/create'"
+          >Tambah</v-btn
+        >
+      </div>
+    </template>
 
     <template>
       <v-row>
@@ -53,19 +58,17 @@
           <v-card>
             <v-container fluid>
               <v-row>
-                <v-card flat tile class="d-flex">
-                  <ListItem
-                    v-for="resep in reseps"
-                    :id="String(resep.id)"
-                    :key="String(resep.id)"
-                    :judul="resep.judul"
-                    :by="resep.by"
-                    :keterangan="resep.keterangan"
-                    :resep="resep.resep"
-                    :gambar="resep.gambar"
-                    @muat-ulang="getData"
-                  ></ListItem>
-                </v-card>
+                <ListItem
+                  v-for="resep in reseps"
+                  :id="String(resep.id)"
+                  :key="String(resep.id)"
+                  :judul="resep.judul"
+                  :by="resep.by"
+                  :keterangan="resep.keterangan"
+                  :resep="resep.resep"
+                  :gambar="resep.gambar"
+                  @muat-ulang="getData"
+                ></ListItem>
               </v-row>
             </v-container>
           </v-card>

@@ -1,55 +1,49 @@
 <template>
-  <v-container fluid>
-    <v-row>
-      <v-col cols="12" sm="10" offset-sm="1">
-        <v-card class="mx-auto" max-width="500">
-          <v-img :src="gambar" height="200px"></v-img>
+  <v-col class="d-flex child-flex" cols="4">
+    <v-card class="d-flex">
+      <v-img :src="gambar" height="200px"></v-img>
 
-          <v-card-title>
-            {{ judul }}
-          </v-card-title>
+      <v-card-title>
+        {{ judul }}
+      </v-card-title>
 
-          <v-card-subtitle>
-            by :
-            {{ by }}
-          </v-card-subtitle>
+      <v-card-subtitle>
+        by :
+        {{ by }}
+      </v-card-subtitle>
 
-          <v-card-actions>
-            <v-btn :to="'/depan/' + id + '/edit'" color="purple" text>
-              edit
-            </v-btn>
+      <v-card-actions>
+        <v-btn :to="'/depan/' + id + '/edit'" color="purple" text>
+          edit
+        </v-btn>
 
-            <v-btn @click="hapus" color="purple" text>
-              hapus
-            </v-btn>
+        <v-btn @click="hapus" color="purple" text>
+          hapus
+        </v-btn>
 
-            <v-spacer></v-spacer>
+        <v-spacer></v-spacer>
 
-            <v-btn icon @click="show = !show">
-              <v-icon>{{
-                show ? 'mdi-chevron-up' : 'mdi-chevron-down'
-              }}</v-icon>
-            </v-btn>
-          </v-card-actions>
+        <v-btn icon @click="show = !show">
+          <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+        </v-btn>
+      </v-card-actions>
 
-          <v-expand-transition>
-            <div v-show="show">
-              <v-divider></v-divider>
+      <v-expand-transition>
+        <div v-show="show">
+          <v-divider></v-divider>
 
-              <v-card-text>
-                {{ keterangan }}
-              </v-card-text>
-              <v-card-text>
-                Cara Membuat :
-                <br />
-                {{ resep }}
-              </v-card-text>
-            </div>
-          </v-expand-transition>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+          <v-card-text>
+            {{ keterangan }}
+          </v-card-text>
+          <v-card-text>
+            Cara Membuat :
+            <br />
+            {{ resep }}
+          </v-card-text>
+        </div>
+      </v-expand-transition>
+    </v-card>
+  </v-col>
 </template>
 
 <script>
